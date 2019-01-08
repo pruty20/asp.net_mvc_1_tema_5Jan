@@ -13,15 +13,12 @@ namespace SecondWebAppHomework.Controllers
         {
             var dogs = PopulateList();
 
-            if (color.HasValue && gender.HasValue)
-            {
-                dogs = dogs.Where(x => x.AnimalColor == color.Value && x.AnimalGender == gender.Value).ToList();
-            }
-            else if (color.HasValue)
+            if (color.HasValue)
             {
                 dogs = dogs.Where(x => x.AnimalColor == color.Value).ToList();
             }
-            else if (gender.HasValue)
+
+            if (gender.HasValue)
             {
                 dogs = dogs.Where(x => x.AnimalGender == gender.Value).ToList();
             }
